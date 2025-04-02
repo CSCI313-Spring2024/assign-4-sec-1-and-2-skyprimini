@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { ContactService } from '../contact.service';
 import { CommonModule } from '@angular/common';
+import { ContactFormComponent } from '../contact-form/contact-form.component';
+
 
 @Component({
   selector: 'app-contact-card',
@@ -24,6 +26,10 @@ export class ContactCardComponent {
     this.contactService.deleteContact(this.contact.id);
   }
 
+  updateContact(){
+    this.contactService.updateContact(this.contact);
+   // this.contactService.updateContact(['/edit', this.contact.id]);
   
+  }
 
 }

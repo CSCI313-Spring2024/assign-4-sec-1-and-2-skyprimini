@@ -15,10 +15,7 @@ export class ContactListComponent {
   contacts;
 
   constructor(private contactService: ContactService) {
-    this.contacts = this.contactService.getContacts(); // Ensure initialization happens here
+    this.contacts = this.contactService.getContacts();
   }
 
-  // trackById(index: number, contact: ): number {
-  //   return contact.id;
-  // }
 }

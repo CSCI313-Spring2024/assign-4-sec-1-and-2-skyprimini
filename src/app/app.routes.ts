@@ -5,5 +5,5 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 export const routes: Routes = [
   { path: '', component: ContactListComponent },
   { path: 'add', component: ContactFormComponent },
-  {path: 'edit', component: ContactFormComponent},
+  { path: 'edit/:id', component: ContactFormComponent },
 ];

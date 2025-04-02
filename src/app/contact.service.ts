@@ -14,7 +14,7 @@ export class ContactService {
       phoneNumber: string;
       email?: string;
     }[]
-    >([
+  >([
     {
       id: 1,
       fName: 'John',
@@ -52,9 +52,12 @@ export class ContactService {
     phoneNumber: string;
     email?: string;
   }) {
+  
     this.contacts.update((list) =>
       list.map((contact) =>
-        contact.id === updatedContact.id ? updatedContact : contact
+        contact.id === updatedContact.id
+          ? { ...contact, ...updatedContact }
+          : contact
       )
     );
   }

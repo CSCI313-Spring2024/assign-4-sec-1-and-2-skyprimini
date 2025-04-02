@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ContactService } from '../contact.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,12 +6,11 @@ import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-contact-form',
-  standalone : true,
+  standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.css',
 })
-  
 export class ContactFormComponent {
   fName = '';
   lName = '';
