@@ -15,3 +15,23 @@
 <div class="container mt-4">
   <router-outlet></router-outlet>
 </div>
+
+<div class="contacts-list">
+    <app-contacts
+        *ngFor="let contact of contacts"
+        [contact]= "contact"
+        (edit)= "editContact($event)"
+        (delete)= "deleteContact($event)" ></app-contacts>
+</div>
+
+<div *ngIf= "editingContact">
+    <h2>Edit Contact</h2>
+    <input type="text" [(ngModel)]= "editingContact.fName" placeholder="fName" />
+    <input type="text" [(ngModel)]="editingContact.lName" placeholder="lName" />
+    <input type="text" [(ngModel)]="editingContact.number" placeholder="Number" />
+    <button (click)="updateContact()">Update</button>
+    <button (click)="cancelEdit()">Cancel</button>
+</div>
+
+
+

@@ -1,9 +1,8 @@
 import { Routes } from '@angular/router';
-import { ContactListComponent } from './contact-list/contact-list.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
+import { AddContactComponent } from './add-contact/add-contact.component';
+import { ContactService } from './contact.service';
 
 export const routes: Routes = [
-  { path: '', component: ContactListComponent },
-  { path: 'add', component: ContactFormComponent },
-  { path: 'edit/:id', component: ContactFormComponent },
+  { path: '', component: ContactService },
+  { path: 'add', component: AddContactComponent },
 ];

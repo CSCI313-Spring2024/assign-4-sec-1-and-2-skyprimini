@@ -1,9 +1,0 @@
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">{{ contact.fName }} {{ contact.lName }}</h5>
-    <p class="card-text">Phone: {{ contact.phoneNumber }}</p>
-    <p class="card-text" *ngIf="contact.email">Email: {{ contact.email }}</p>
-    <button class="btn btn-danger" (click)="deleteContact()">Delete</button>
-    <button class="btn btn-danger" (click)="updateContact()"> Edit</button>
-  </div>
-</div>

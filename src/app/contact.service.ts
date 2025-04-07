@@ -1,37 +1,29 @@
-import { Injectable,signal } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Contact } from './contact.data';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContactService {
-  constructor() {}
-
-  private contacts = signal<
-    {
-      id: number;
-      fName: string;
-      lName: string;
-      phoneNumber: string;
-      email?: string;
-    }[]
-  >([
+  private contacts: Contact[] = [
     {
       id: 1,
       fName: 'John',
       lName: 'Adams',
-      phoneNumber: '701-000-1000',
-      email: 'john@example.com',
+      number: '701-000-1000',
     },
+
     {
       id: 2,
       fName: 'Mary',
       lName: 'Jane',
-      phoneNumber: '701-000-2000',
-      email: 'mary@example.com',
+      number: '701-100-1010',
     },
-  ]);
+  ];
 
-  getContacts() {
+  constructor() {}
+
+  getContacts(): Contact[] {
     return this.contacts;
   }
 
@@ -40,29 +32,29 @@ export class ContactService {
     fName: string;
     lName: string;
     phoneNumber: string;
-    email?: string;
+
   }) {
-    this.contacts.update((list) => [...list, { ...contact, id: Date.now() }]);
+    //this.contacts.update((list) => [...list, { ...contact, id: Date.now() }]);
+  }
+  addAccount(fName: string, lName: string, number: string) {
+    const newContact: Contact = {
+      id: this.contacts.length + 1,
+      fName,
+      lName,
+      number,
+    };
+    this.contacts.push(newContact);
   }
 
-  updateContact(updatedContact: {
-    id: number;
-    fName: string;
-    lName: string;
-    phoneNumber: string;
-    email?: string;
-  }) {
-  
-    this.contacts.update((list) =>
-      list.map((contact) =>
-        contact.id === updatedContact.id
-          ? { ...contact, ...updatedContact }
-          : contact
-      )
+  deleteContact(id: number): void {
+    this.contacts = this.contacts.filter((contact) => contact.id !== id);
+  }
+  updateContact(updatedContact: Contact): void {
+    const index = this.contacts.findIndex(
+      (contact) => contact.id === updatedContact.id
     );
-  }
-
-  deleteContact(id: number) {
-    this.contacts.update((list) => list.filter((contact) => contact.id !== id));
+    if (index !== -1) {
+      this.contacts[index] = updatedContact;
+    }
   }
 }
