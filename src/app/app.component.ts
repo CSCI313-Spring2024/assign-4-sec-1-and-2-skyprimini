@@ -1,5 +1,5 @@
 import { Component, inject, NgModule, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { ContactsComponent } from './contacts/contacts.component';
 import { CommonModule, NgFor } from '@angular/common';
 import { Contact } from './contact.data';
@@ -12,7 +12,7 @@ import { AddContactComponent } from './add-contact/add-contact.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, ContactsComponent, CommonModule, FormsModule],
+  imports: [RouterOutlet, RouterModule, ContactsComponent, CommonModule, FormsModule, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   title = 'assignment-4';
   contacts: Contact[] = [];
   contactService = inject(ContactService);
-  editingContact: Contact | null = null; // Track the contact being edited
+  editingContact: Contact | null = null; 
 
   constructor() {}
 

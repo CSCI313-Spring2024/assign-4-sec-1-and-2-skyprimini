@@ -21,24 +21,35 @@ export class ContactService {
     },
   ];
 
-  constructor() {}
+  constructor() { }
+  
+  // getContactByID(id: number): Contact {
+  //   return this.contacts.filter(post => post.id == id)[0];
+  // }
 
   getContacts(): Contact[] {
     return this.contacts;
   }
 
-  addContact(contact: {
-    id: number;
-    fName: string;
-    lName: string;
-    phoneNumber: string;
+  // addContact(contact: {
+  //   id: number;
+  //   fName: string;
+  //   lName: string;
+  //   phoneNumber: string;
 
-  }) {
-    //this.contacts.update((list) => [...list, { ...contact, id: Date.now() }]);
-  }
+  // }) {
+  //   //this.contacts.update((list) => [...list, { ...contact, id: Date.now() }]);
+  //   this.contacts.push(this.addContact);
+  // }
+
   addAccount(fName: string, lName: string, number: string) {
+    const maxId = this.contacts.reduce(
+      (max, contact) => Math.max(max, contact.id),
+      0
+    );
     const newContact: Contact = {
-      id: this.contacts.length + 1,
+      //id: this.contacts.length + 1,
+      id: maxId + 1,
       fName,
       lName,
       number,
@@ -49,6 +60,7 @@ export class ContactService {
   deleteContact(id: number): void {
     this.contacts = this.contacts.filter((contact) => contact.id !== id);
   }
+
   updateContact(updatedContact: Contact): void {
     const index = this.contacts.findIndex(
       (contact) => contact.id === updatedContact.id
