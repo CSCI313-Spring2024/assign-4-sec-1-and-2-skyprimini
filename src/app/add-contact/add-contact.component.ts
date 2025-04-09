@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { ContactService } from '../contact.service';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 
@@ -22,7 +22,9 @@ export class AddContactComponent {
   addContact(): void {
     if (this.fName && this.lName && this.number) {
       this.contactService.addAccount(this.fName, this.lName, this.number);
-      this.contactService.getContacts()
+      this.fName = '';
+      this.lName = '';
+      this.number = '';
       this.router.navigate(['/']);
     }
   }

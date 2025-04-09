@@ -1,9 +1,7 @@
-<div class="Contacts">
-  <div class="contact-card">
-    <div class="contact-name">{{ contact.fName }}</div>
-    <div class="contact-name">{{ contact.lName }}</div>
-    <div class="contact-number">{{ contact.number }}</div>
-    <button (click)="editContact()">Edit Contact</button>
-    <button (click)="deleteContact()">Delete Contact</button>
-  </div>
+<div class="contact-card">
+  <div class="contact-fname">{{ contact.fName }} </div>
+  <div class="contact-lname">{{ contact.lName }}</div>
+  <div class="contact-number">{{ contact.number }}</div>
+    <button [routerLink]= "['/edit', contact.id]"> Edit</button>  
+    <button (click)="deleteContact()"> Delete </button>
 </div>

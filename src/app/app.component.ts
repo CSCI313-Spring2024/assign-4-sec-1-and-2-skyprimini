@@ -12,7 +12,14 @@ import { AddContactComponent } from './add-contact/add-contact.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, ContactsComponent, CommonModule, FormsModule, RouterLink],
+  imports: [
+    RouterOutlet,
+    RouterModule,
+    ContactsComponent,
+    CommonModule,
+    FormsModule,
+    RouterLink,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -20,11 +27,15 @@ export class AppComponent implements OnInit {
   title = 'assignment-4';
   contacts: Contact[] = [];
   contactService = inject(ContactService);
-  editingContact: Contact | null = null; 
+  editingContact: Contact | null = null;
 
   constructor() {}
 
   ngOnInit(): void {
+    this.refreshContacts();
+  }
+
+  refreshContacts(): void {
     this.contacts = this.contactService.getContacts();
   }
 
@@ -48,7 +59,6 @@ export class AppComponent implements OnInit {
   cancelEdit(): void {
     this.editingContact = null;
   }
-  
 }
 
 const routes: Routes = [
