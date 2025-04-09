@@ -8,7 +8,7 @@ import { Router, RouterModule, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-add-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterOutlet, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './add-contact.component.html',
   styleUrl: './add-contact.component.css',
 })
