@@ -28,4 +28,8 @@ export class AddContactComponent {
       this.router.navigate(['/']);
     }
   }
+
+  cancelAdd(): void {
+    this.router.navigate(['/']);
+  }
 }

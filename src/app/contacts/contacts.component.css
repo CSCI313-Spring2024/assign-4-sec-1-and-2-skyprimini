@@ -1,17 +1,50 @@
 .contact-card {
   border: 1px solid #ddd;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(92, 92, 92, 0.1);
-  background-color: #fafafa;
+  padding: 16px;
+  margin: 12px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(92, 92, 92, 0.15);
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(92, 92, 92, 0.2);
+}
+
 .contact-name {
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 8px;
 }
+
 .contact-number {
-  color: #555;
+  font-size: 1rem;
+  color: #777;
 }
+
 button {
-  margin-right: 8px;
+  margin-right: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
 }
+
+button:hover {
+  background-color: #004085;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:focus {
+  outline: none;
+}
+

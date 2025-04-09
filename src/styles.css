@@ -1,4 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #f4f4f9; 
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.navbar {
+  background-color:seashell;
+  padding: 0.8rem 1.5rem;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color:rgb(113, 54, 54);
+  font-size: 1.3rem;
+}
+
+.navbar-nav .nav-link {
+  color: rgb(113, 54, 54) !important;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  text-transform: uppercase; 
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffd700 !important;      
+}
+
+.contact-card {
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.contact-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  margin-right: 8px;
+}
